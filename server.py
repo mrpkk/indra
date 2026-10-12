@@ -30,7 +30,7 @@ CARDS = [
     },
     {
         "name": "attest",
-        "path": "https://rta.lat/attest/",
+        "path": "https://attest.rta.lat/",
         "tag": "Provenance",
         "body": "Check that an agent's artifact matches its schema and signature. "
                 "Artifacts from a model that has been made to produce plausible "
@@ -138,7 +138,7 @@ mcp server, ai agent infrastructure, api usage based pricing">
   "operatingSystem":"Web"},
  {"@type":"SoftwareApplication","name":"attest","applicationCategory":"DeveloperApplication",
   "description":"Artifact provenance and schema verification for AI agents.",
-  "url":"https://rta.lat/attest/","offers":{"@type":"Offer","price":"0.005","priceCurrency":"USDC"}},
+  "url":"https://attest.rta.lat/","offers":{"@type":"Offer","price":"0.005","priceCurrency":"USDC"}},
  {"@type":"SoftwareApplication","name":"agentpay","applicationCategory":"BusinessApplication",
   "description":"Consumption-based API billing priced from measured tokens, CPU and bytes.",
   "url":"https://rta.lat/agentpay/"},
