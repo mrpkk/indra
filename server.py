@@ -83,10 +83,19 @@ CARDS = [
 
 HTML = """<!doctype html><html lang=en><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Indra — small tools for agents that have to be trusted</title>
-<meta name=description content="Six small services for AI agents: zero-knowledge
-proofs, artifact provenance, consumption-based billing, mandate enforcement,
-long memory and platform due diligence. Live on Base mainnet.">
+<title>Zero-Knowledge Proof API, Agent Memory &amp; x402 Payments — Indra</title>
+<meta name=description content="Zero-knowledge proof API, agent long-term memory,
+consumption-based API billing, mandate enforcement and platform due diligence
+for AI agents. Groth16, MCP, x402 payments on Base mainnet. Free tiers, no
+account, no SDK.">
+<meta name=keywords content="zero knowledge proof, zk proof api, groth16, zk-snarks,
+agent memory, long term memory ai, x402 payments, base mainnet, usdc api,
+mcp server, ai agent infrastructure, api usage based pricing">
+<meta property=og:title content="Indra — zero-knowledge proofs, agent memory, x402 payments">
+<meta property=og:description content="Six small services for AI agents that have to be trusted. Live on Base mainnet, free tiers, no account.">
+<meta property=og:type content=website>
+<meta property=og:url content="https://indra.rta.lat">
+<link rel=canonical href="https://indra.rta.lat">
 <style>
  :root{--bg:#0b0d12;--card:#141821;--ink:#e8ecf4;--mut:#969eac;--am:#f0a35e;
        --gr:#6ec896;--bd:#1f242e}
@@ -121,6 +130,29 @@ long memory and platform due diligence. Live on Base mainnet.">
  footer{margin-top:44px;color:var(--mut);font-size:13.5px}
  footer a{color:var(--am)}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"SoftwareApplication","name":"ṚTA","applicationCategory":"SecurityApplication",
+  "description":"Zero-knowledge proof API: prove a balance, stake, account age or transaction count meets a threshold without revealing the value.",
+  "url":"https://rta.lat","offers":{"@type":"Offer","price":"1","priceCurrency":"USDC"},
+  "operatingSystem":"Web"},
+ {"@type":"SoftwareApplication","name":"attest","applicationCategory":"DeveloperApplication",
+  "description":"Artifact provenance and schema verification for AI agents.",
+  "url":"https://rta.lat/attest/","offers":{"@type":"Offer","price":"0.005","priceCurrency":"USDC"}},
+ {"@type":"SoftwareApplication","name":"agentpay","applicationCategory":"BusinessApplication",
+  "description":"Consumption-based API billing priced from measured tokens, CPU and bytes.",
+  "url":"https://rta.lat/agentpay/"},
+ {"@type":"SoftwareApplication","name":"drift","applicationCategory":"DeveloperApplication",
+  "description":"MCP server for continuous mandate enforcement of AI agents.",
+  "url":"https://drift.rta.lat/","offers":{"@type":"Offer","price":"0.005","priceCurrency":"USDC"}},
+ {"@type":"SoftwareApplication","name":"indra-memory","applicationCategory":"DeveloperApplication",
+  "description":"Long-term memory for AI agents in SQLite outside the context window.",
+  "url":"https://rta.lat/memory/"},
+ {"@type":"SoftwareApplication","name":"verity","applicationCategory":"UtilitiesApplication",
+  "description":"Due diligence check distinguishing live platforms from parked or dead domains.",
+  "url":"https://rta.lat/verity/"}
+]}
+</script>
 <div class=wrap>
 <h1>Small tools for agents<br>that have to be trusted</h1>
 <p class=lede>Six services, each one narrow enough to understand in a minute:
