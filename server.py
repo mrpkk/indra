@@ -32,10 +32,12 @@ CARDS = [
         "name": "attest",
         "path": "https://attest.rta.lat/",
         "tag": "Provenance",
-        "body": "Check that an agent's artifact matches its schema and signature. "
-                "Artifacts from a model that has been made to produce plausible "
-                "output need provenance more than they need a validator.",
-        "price": "20 free/day, then 0.005 USDC",
+        "body": "Four layers: schema, is there anything inside, what conditions "
+                "produced it, and was the action permitted. Ed25519-signed, and "
+                "the check runs without trusting us.",
+        "demo": "https://attest.rta.lat/demo",
+        "price": "20 free/day, then 0.005 USDC per call, or 9 USDC "
+                 "for 30 days prepaid",
         "state": "Base mainnet",
     },
     {
@@ -138,7 +140,7 @@ mcp server, ai agent infrastructure, api usage based pricing">
   "operatingSystem":"Web"},
  {"@type":"SoftwareApplication","name":"attest","applicationCategory":"DeveloperApplication",
   "description":"Artifact provenance and schema verification for AI agents.",
-  "url":"https://attest.rta.lat/","offers":{"@type":"Offer","price":"0.005","priceCurrency":"USDC"}},
+  "url":"https://attest.rta.lat/","offers":{"@type":"AggregateOffer","lowPrice":"0.005","highPrice":"9","priceCurrency":"USDC"}},
  {"@type":"SoftwareApplication","name":"agentpay","applicationCategory":"BusinessApplication",
   "description":"Consumption-based API billing priced from measured tokens, CPU and bytes.",
   "url":"https://rta.lat/agentpay/"},
