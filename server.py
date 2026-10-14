@@ -198,10 +198,58 @@ def render() -> str:
     return HTML.replace("__CARDS__", "".join(out))
 
 
+def _base_url() -> str:
+    """Публичный адрес витрины: в sitemap обязаны быть абсолютные URL."""
+    import os
+    return os.environ.get("INDRA_BASE_URL",
+                          "https://indra.rta.lat").rstrip("/")
+
+
+def _robots() -> str:
+    """Краулеров пускаем: витрина — точка входа для поиска."""
+    return ("User-agent: *\n"
+            "Allow: /\n"
+            f"Sitemap: {_base_url()}/sitemap.xml\n")
+
+
+def _sitemap() -> str:
+    """Карта витрины: главная плюс адреса продуктов.
+
+    Витрина — единственная страница, перечисляющая остальные домены.
+    Без неё поисковик видит семь разрозненных сайтов вместо одного
+    проекта, и связь между ними не читается.
+    """
+    base = _base_url()
+    urls = f"<url><loc>{base}</loc></url>"
+    for card in CARDS:
+        urls += f"<url><loc>{card['path']}</loc></url>"
+    return ('<?xml version="1.0" encoding="UTF-8"?>'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            f"{urls}</urlset>")
+
+
+def _send_raw(handler, body: bytes, content_type: str) -> None:
+    """Отдать не-JSON: витрина отдаёт HTML, robots и sitemap — текст."""
+    handler.send_response(200)
+    handler.send_header("Content-Type", content_type)
+    handler.send_header("Content-Length", str(len(body)))
+    handler.end_headers()
+    try:
+        handler.wfile.write(body)
+    except (BrokenPipeError, ConnectionResetError):
+        pass
+
 class Handler(BaseHTTPRequestHandler):
     server_version = "indra-index"
 
     def do_GET(self) -> None:  # noqa: N802
+        raw = self.path.split("?")[0].rstrip("/") or "/"
+        if raw == "/robots.txt":
+            return _send_raw(self, _robots().encode("utf-8"),
+                              "text/plain; charset=utf-8")
+        if raw == "/sitemap.xml":
+            return _send_raw(self, _sitemap().encode("utf-8"),
+                              "application/xml; charset=utf-8")
         raw = render().encode()
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
