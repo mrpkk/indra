@@ -13,6 +13,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -244,6 +245,16 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802
         raw = self.path.split("?")[0].rstrip("/") or "/"
+        if raw == "/.well-known/glama.json":
+            import os
+            token = os.environ.get("GLAMA_CLAIM_TOKEN", "").strip()
+            if token:
+                return _send_raw(self, json.dumps({
+                    "$schema": "https://glama.ai/mcp/schemas/connector.json",
+                    "claim": token}).encode("utf-8"),
+                    "application/json; charset=utf-8")
+            return _send_raw(self, b'{"error":"claim token not configured"}',
+                              "application/json; charset=utf-8")
         if raw == "/robots.txt":
             return _send_raw(self, _robots().encode("utf-8"),
                               "text/plain; charset=utf-8")
