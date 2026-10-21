@@ -73,6 +73,34 @@ CARDS = [
         "state": "Live",
     },
     {
+        "name": "skilllint",
+        "path": "https://rta.lat/skilllint/",
+        "tag": "Skill vetting",
+        "body": "Check an agent skill before you install it: frontmatter, triggers, "
+                "dead instructions, secret-shaped literals, exfiltration markers. "
+                "Eleven rules, and the file never leaves the machine.",
+        "price": "Free",
+        "state": "MCP",
+    },
+    {
+        "name": "mitracore",
+        "path": "https://rta.lat/mitracore/",
+        "tag": "Trust layer",
+        "body": "Verify the artifact, meter what the run actually cost, enforce the "
+                "mandate — one call instead of three. Signed receipts verify offline.",
+        "price": "20 free/day, then 0.005 USDC",
+        "state": "MCP",
+    },
+    {
+        "name": "soma",
+        "path": "https://rta.lat/soma/",
+        "tag": "Rhythm & vows",
+        "body": "The protocol for agent rhythm: who promised what, to whom, by when — "
+                "and whether it was actually kept.",
+        "price": "Free",
+        "state": "MCP",
+    },
+    {
         "name": "verity",
         "path": "https://rta.lat/verity/",
         "tag": "Due diligence",
@@ -182,7 +210,10 @@ paying for them. <a href="https://attest.rta.lat/start">Request access →</a>
 <b>MCP servers</b> — connect in one block:
 <a href="https://attest.rta.lat/mcp">attest</a> ·
 <a href="https://drift.rta.lat/mcp">drift</a> ·
-<a href="https://rta.lat/mcp">ṚTA</a>
+<a href="https://rta.lat/mcp">ṚTA</a> ·
+<a href="https://rta.lat/skilllint/mcp">skilllint</a> ·
+<a href="https://rta.lat/mitracore/mcp">mitracore</a> ·
+<a href="https://rta.lat/soma/mcp">soma</a>
 <span class=reg>official registry: lat.rta/*</span>
 </div>
 </div>
