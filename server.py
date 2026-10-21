@@ -126,7 +126,13 @@ mcp server, ai agent infrastructure, api usage based pricing">
  .pr{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--bd);
      padding-top:11px;margin-top:auto;font-size:13px}
  .pr span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
- .warn{margin-top:52px;border:1px solid #3a2c1d;border-left:3px solid var(--am);
+ .early{margin:26px 0 0;padding:18px 20px;border:1px solid #232a33;border-radius:12px;
+background:#10141a;display:grid;gap:14px}
+.early b{color:#7fd1b9}
+.early a{color:#7fd1b9}
+.early .mcp{font-size:14px;color:#a9b4c0}
+.early .reg{color:#6d7683;font-size:13px;margin-left:8px}
+.warn{margin-top:52px;border:1px solid #3a2c1d;border-left:3px solid var(--am);
        border-radius:10px;padding:16px 20px;background:#141821}
  .warn b{color:var(--am)}
  .warn p{margin:6px 0 0;color:var(--mut);font-size:14.5px;max-width:74ch}
@@ -166,6 +172,20 @@ runs, <b>remember across sessions</b>, and <b>check that a platform is real</b>.
 nothing to install. Payments per call over x402 on Base mainnet.
 Source: <a href="https://github.com/mrpkk">github.com/mrpkk</a></p>
 <div class=grid>__CARDS__</div>
+<div class=early>
+<div>
+<b>100 free artifact checks for 30 days.</b> No card, no account, no signup.
+Early access for teams that accept artifacts produced by AI agents before
+paying for them. <a href="https://attest.rta.lat/start">Request access →</a>
+</div>
+<div class=mcp>
+<b>MCP servers</b> — connect in one block:
+<a href="https://attest.rta.lat/mcp">attest</a> ·
+<a href="https://drift.rta.lat/mcp">drift</a> ·
+<a href="https://rta.lat/mcp">ṚTA</a>
+<span class=reg>official registry: lat.rta/*</span>
+</div>
+</div>
 <div class=warn>
 <b>What these are not.</b>
 ṚTA's ceremony is single-party, so a proof can be forged by the operator —
